@@ -13,21 +13,19 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-  名前:
-<!--
-  <%= f.text_field :name %>
-  <input type="text" name="message[name]" id="message_name" />
--->
-  <textarea name="message[name]" id="message_name" rows="1" cols="20"></textarea>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-1 control-label">名前:</label>
+      <div class="col-sm-11">
+        <%= f.text_field :name %>
+      </div>
 
-  内容:
-<!--
-  <%= f.text_field :body %>
-  <input type="text" name="message[body]" id="message_body" />
-  <input type="submit" name="commit" value="Create Message" />
--->
-  <textarea name="message[body]" id="message_body" rows="1" cols="20"></textarea>
-  <br>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
+      <label class="col-sm-1 control-label">内容:</label>
+      <div class="col-sm-11">
+        <%= f.text_area :body %>
+      </div>
 
+      <%= f.submit class: "btn btn-sm btn-primary" %>
+    </div>
+  </form>
 <% end %>
